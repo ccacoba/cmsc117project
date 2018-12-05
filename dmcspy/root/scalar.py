@@ -1,0 +1,3 @@
+"""
+scalar in root
+"""
