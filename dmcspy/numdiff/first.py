@@ -9,8 +9,9 @@ eps = np.finfo('float').eps #4/3
 h = np.array([0.1/(1.1**k) for k in range(500)])
 #takes stepsizes greather than eps
 #h = h[h>eps]
-
+from time import time
 def forward_difference():
+	start = time()
 	"""
 	This function shows the graph of the Forward Difference Formula
 	f'(x) ~= [f(x+h) - f(x)]/h. The	truncation error is (h/2)f"(eps).
@@ -39,8 +40,11 @@ def forward_difference():
 	plt.xticks(fontsize = 14)
 	plt.yticks(fontsize = 14)
 	plt.gca().autoscale(enable = True, axis='x', tight =True)
-
+	end = time()
+	plt.show()
+	return end-start
 def center_difference():
+	start = time()
 	"""
 	This function shows the graph of Centered Difference Formula
 	f'(x) ~= [f(x+h) - f(x - h)]/(2h). The truncation error is
@@ -70,8 +74,11 @@ def center_difference():
 	plt.xticks(fontsize = 14)
 	plt.yticks(fontsize = 14)
 	plt.gca().autoscale(enable = True, axis='x', tight =True)
-
+	end = time()
+	plt.show()
+	return end-start
 def backward_difference():
+	start = time()
 	"""
 	This function shows the graph of Backward Difference Formula
 	f'(x) ~= [f(x) - f(x-h)]/h. The truncation error is (h/2)f"(eps).
@@ -100,8 +107,7 @@ def backward_difference():
 	plt.xticks(fontsize = 14)
 	plt.yticks(fontsize = 14)
 	plt.gca().autoscale(enable = True, axis='x', tight =True)
+	end = time()
+	plt.show()
+	return end-start
 
-forward_difference()
-backward_difference()
-center_difference()
-plt.show()
