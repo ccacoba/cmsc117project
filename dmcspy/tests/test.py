@@ -149,6 +149,7 @@ def linalg_jor():
 	
 # ------------------------------------------ #
 # -------- EXAMPLES FOR scalar.py ---------- #
+# ------------ Riyana Gueco ---------------- #
 # ------------------------------------------ #
 
 def f(x):
@@ -211,7 +212,9 @@ def RegulaFalsiMethodExample(f=f):
 
 # ------------------------------------------ #
 # -------- EXAMPLES FOR poly.py ------------ #
+# ----------- Riyana Gueco ----------------- #
 # ------------------------------------------ #
+
 def F(x):
 	return 1+x**2+x**3
 
@@ -225,7 +228,7 @@ def NewtonHornerExample(F=F):
 
 	print(" ")
 
-if __name__ == 'main':
+if __name__ == '__main__':
 	linalg_bckSub() #calling backward substitution example
 	linalg_fwdSub()	#calling forward substitution example
 	linalg_gem_solve() #calling GEM
@@ -235,4 +238,9 @@ if __name__ == 'main':
 	linalg_LU_partial_solve() #calling LU partial Solving method
 	linalg_sor() #calling sor
 	linalg_jor() #calling jor
-	
+	BisectionMethodExample()
+	SecantMethodExample()
+	NewtonMethodExample()
+	ChordMethodExample()
+	RegulaFalsiMethodExample()
+	NewtonHornerExample()
