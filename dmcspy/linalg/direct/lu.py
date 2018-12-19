@@ -1,7 +1,29 @@
+"""
+This is a module under dmcs.linalg.direct.
+
+This module includes the implementation of LU Decomposition methods (Doolittle, kji, jki, partial) which will be needed for solving the solutions of the system Ax = b. 
+
+This module split A into L (a lower triangular matrix), U (a upper triangular matrix).
+
+
+"""
+__author__ = 'Charles Nikkon Acoba'
 from copy import deepcopy
 from time import time
 
-def LU_doolittle(A): #doolitle
+def LU_doolittle(A):
+	"""
+	A function that split A into L, U.
+	
+	Arguments:
+		A - the matrix for of the system Ax = b
+
+	Return:
+		L 		- the lower triangular matrix of A
+		U 		- the upper triangular matrix of A
+		(end-start)	- time elapsed
+			
+	"""
 	start = time()
 	n = len(A)
 	L = [[0 for k in range(n)] for k in range(n)]	
@@ -24,6 +46,18 @@ def LU_doolittle(A): #doolitle
 	end = time()
 	return L, U, start - end
 def LU_kji(A):
+	"""
+	A function that partitions A into L, U.
+	
+	Arguments:
+		A - the matrix for of the system Ax = b
+
+	Return:
+		L 		- the lower triangular matrix of A
+		U 		- the upper triangular matrix of A
+		(end-start)	- time elapsed
+			
+	"""
 	start = time()
 	n = len(A)
 	A = deepcopy(A)
@@ -49,6 +83,18 @@ def LU_kji(A):
 	return L, U, start - end
 
 def LU_jki(A):
+	"""
+	A function that partitions A into L, U.
+	
+	Arguments:
+		A - the matrix for of the system Ax = b
+
+	Return:
+		L 		- the lower triangular matrix of A
+		U 		- the upper triangular matrix of A
+		(end-start)	- time elapsed
+			
+	"""
 	start = time()
 	n = len(A)
 	A = deepcopy(A)
@@ -73,6 +119,20 @@ def LU_jki(A):
 	return L, U, start - end
 	
 def LU_partial(A):
+	"""
+	A function that partitions A into L, U.
+	Used when the pivot/s is/are 0.
+	
+	Arguments:
+		A - the matrix for of the system Ax = b
+
+	Return:
+		L 		- the lower triangular matrix of A
+		U 		- the upper triangular matrix of A
+		p		- changes in position of A
+		(end-start)	- time elapsed
+			
+	"""
 	start = time()
 	n = len(A)
 	A = deepcopy(A)

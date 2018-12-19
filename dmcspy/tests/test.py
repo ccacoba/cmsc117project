@@ -235,3 +235,4 @@ if __name__ == 'main':
 	linalg_LU_partial_solve() #calling LU partial Solving method
 	linalg_sor() #calling sor
 	linalg_jor() #calling jor
+	

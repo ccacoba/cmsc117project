@@ -1,7 +1,7 @@
 """
 This is a module under dmcs.linalg.iterative.
 
-This module includes the implementation of Jacobian Over Relaxation method for approximating the solutions of a system given the Matrix 'A', the Matrix 'A', and the initial solution 'x'.
+This module includes the implementation of Jacobian Over Relaxation method for approximating the solutions of a system given the Matrix 'A', the vector 'b', and the initial solution 'x'.
 
 Iterative methods are more efficient to use when the system is large, i.e. the number of equations is beyond the capacity of manual solving.
 """

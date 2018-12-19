@@ -1,8 +1,29 @@
+"""
+This is a module under dmcs.linalg.direct.
+
+This module includes the implementation of backward substitution method for solving the solutions of a system given the Upper triangular matrix 'U', the vector 'b'.
+
+"""
 from time import time
+__author__ = 'Charles Nikkon Acoba'
 def bckward(U, b):
-	start = time()
+	"""
+	A function that solves the linear system Ux=b where
+	U is a upper triangular matrix and b is a vector.
+	
+	Arguments:
+		U 	- upper triangular matrix form of the system Ux = b
+		b 	- the Vector b in the system Ax = b
+
+	Return:
+		x 		- approximation of x such that Ax=b
+		(end-start)	- time elapsed
+			
+	"""
 	#Solves the linear system Ux=b where
 	# U is a upper triangular matrix and b is a vector.
+	
+	start = time()
 	n = len(b) 
 	#initialize x	
 	x = [0 for k in range(n)] 
