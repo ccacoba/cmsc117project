@@ -3,9 +3,8 @@
 # -------------by Nikkon Acoba-------------- #
 from ..linalg import *
 from ..root import *
-from ..numdiff import *
-import numpy as np
 
+import numpy as np
 def linalg_bckSub():
 	print("---BACKWARD SUBSTITUTION METHOD---\n")
 	Upp = [[1, -2, 1], [0,1,6], [0,0,1]]
@@ -228,29 +227,6 @@ def NewtonHornerExample(F=F):
 	print([F(x) for x in x_val])
 
 	print(" ")
-# ------------------------------------------ #
-# -------- EXAMPLES FOR NUMDIFF ------------ #
-# ------------------------------------------ #
-def numdiff_forward():
-	print("--FORWARD DIFFERENCE METHOD--")
-	time=first.forward_difference()
-	print("Time Elapsed: ", time)
-	print(" ")
-def numdiff_backward():
-	print("--BACKWARD DIFFERENCE METHOD--")
-	time=first.backward_difference()
-	print("Time Elapsed: ", time)
-	print(" ")
-def numdiff_center():
-	print("--BACKWARD DIFFERENCE METHOD--")
-	time=first.center_difference()
-	print("Time Elapsed: ", time)
-	print(" ")	
-def numdiff_second_derivative():
-	print("--Second derivative METHOD--")
-	time=second.second_derivative()
-	print("Time Elapsed: ", time)
-	print(" ")	
 
 if __name__ == '__main__':
 	linalg_bckSub() #calling backward substitution example
@@ -268,7 +244,3 @@ if __name__ == '__main__':
 	ChordMethodExample()
 	RegulaFalsiMethodExample()
 	NewtonHornerExample()
-	numdiff_forward()
-	numdiff_backward()
-	numdiff_center()
-	numdiff_second_derivative()

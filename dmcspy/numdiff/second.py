@@ -9,9 +9,8 @@ eps = np.finfo('float').eps #4/3
 h = np.array([0.1/(1.1**k) for k in range(500)])
 #takes stepsizes greather than eps
 #h = h[h>eps]
-from time import time
+
 def second_derivative():
-	start = time()
 	"""
 	This function shows the graph of the Second Derivative Formula
 	f"(x) = [f(x+h) - 2f(x) + f(x-h)]/(h^2). The truncation error
@@ -41,7 +40,6 @@ def second_derivative():
 	plt.xticks(fontsize = 14)
 	plt.yticks(fontsize = 14)
 	plt.gca().autoscale(enable = True, axis='x', tight =True)
-	end = time()
 	plt.show()
-	return end-start
-#second_derivative()
+
+second_derivative()
