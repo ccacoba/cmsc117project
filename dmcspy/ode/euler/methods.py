@@ -48,8 +48,8 @@ def forward(T, N, function, init):
         for k in range(N):
         	x[:, k+1] = x[:,k]+ h*f(x[:,k])
         end = time()
-        time = end -start
-        return x, time
+        t = end -start
+        return x, t
 
 def backward( T, N ,function, init):
         start = time()
@@ -62,8 +62,8 @@ def backward( T, N ,function, init):
         for k in range(N):
                 x[:,k+1] = x[:,k] + h*f(x[:,k+1])
         end = time()
-        time = end -start    
-        return x, time
+        t = end -start    
+        return x, t
     
 def theta(T, N ,function, init,theta = 0.5):
         start = time()
@@ -76,7 +76,7 @@ def theta(T, N ,function, init,theta = 0.5):
         for k in range(N):
         	x[:, k+1] = x[:,k]+ h*(theta*f(x[:,k]) + (1-theta)*f(x[:,k+1]))
         end = time()
-        time = end -start
-        return x, time
+        t = end -start
+        return x, t
     
 
