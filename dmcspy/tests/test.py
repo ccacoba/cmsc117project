@@ -234,6 +234,7 @@ def NewtonHornerExample(F=F):
 # -------------- Imman Narciso -------------- #
 # ------------------------------------------- #
 def ode_feuler():
+	print("Forward Euler")
         x0 = np.array([1500,30])
         x_val, time_val = euler.method.forward(T = 1000, N = 10000, function = fun, init = x0)
         base.PrintResults(x_val, time_val)
@@ -242,21 +243,25 @@ def ode_feuler():
 #def ode_theta():
 
 def ode_adam_bashfort2():
+	print("Adam Bashfort 2")
         x0 = np.array([1500,30])
         x_val, time_val = adam_bashfort.method.adams2(T = 1000, N = 10000, function = fun, init = x0)
         base.PrintResults(x_val, time_val)
         
 def ode_adam_bashfort3():
+	print("Adam Bashfort 3")
         x0 = np.array([1500,30])
         x_val, time_val = adam_bashfort.method.adams3(T = 1000, N = 10000, function = fun, init = x0)
         base.PrintResults(x_val, time_val)
         
 def ode_rk2():
+	print("RK2")
         x0 = np.array([1500,30])
         x_val, time_val = rk.method.rk2(T = 1000, N = 10000, function = fun, init = x0)
         base.PrintResults(x_val, time_val)
         
 def ode_rk4():
+	print("RK4")
         x0 = np.array([1500,30])
         x_val, time_val = rk.method.rk4(T = 1000, N = 10000, function = fun, init = x0)
         base.PrintResults(x_val, time_val)
