@@ -1,1 +1,2 @@
-from ..__init__ import linalg
+from .one_d import method
+from .one_d import NewtonCotes
