@@ -16,4 +16,4 @@ def NCQweights(n):
         for j in range(n+1):
             A[k][j] = j**k
     w, time = linalg.direct.gem.gem_solve(A,b)
-
+    return w
