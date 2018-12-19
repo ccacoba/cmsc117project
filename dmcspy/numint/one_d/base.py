@@ -17,3 +17,16 @@ def NCQweights(n):
             A[k][j] = j**k
     w, time = linalg.direct.gem.gem_solve(A,b)
     return w
+
+def sdot(s,v):
+    sum = 0
+    for i in range(len(v)):
+        sum += v[i]*s
+    return sum
+
+def vdot(v1,v2):
+    sum = 0
+    for i in range(len(v1)):
+        sum += v1[i]*v2[i]
+    return sum
+
