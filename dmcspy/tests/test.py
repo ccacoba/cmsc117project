@@ -15,42 +15,64 @@ def df(x):
 	"""
 	return -2*(np.sin(4*x)+x)
 
-print("BISECTION METHOD: f(x) = cos^2(2x) - x^2")
-x_val, time_val, iters_val = scalar.BisectionMethod(f)
-base.PrintResults(x_val, time_val, iters_val)
-print("Value of f(x): ", end='')
-print(f(x_val))
+def BisectionMethodExample(f=f):
+	print("BISECTION METHOD: f(x) = cos^2(2x) - x^2")
+	x_val, time_val, iters_val = scalar.BisectionMethod(f)
+	base.PrintResults(x_val, time_val, iters_val)
+	print("Value of f(x): ", end='')
+	print(f(x_val))
 
-print(" ")
+	print(" ")
 
-print("SECANT METHOD: f(x) = cos^2(2x) - x^2")
-x_val, time_val, iters_val = scalar.SecantMethod(f)
-base.PrintResults(x_val, time_val, iters_val)
-print("Value of f(x): ", end='')
-print(f(x_val))
+def SecantMethodExample(f=f):
+	print("SECANT METHOD: f(x) = cos^2(2x) - x^2")
+	x_val, time_val, iters_val = scalar.SecantMethod(f)
+	base.PrintResults(x_val, time_val, iters_val)
+	print("Value of f(x): ", end='')
+	print(f(x_val))
 
-print(" ")
+	print(" ")
 
-print("NEWTON METHOD: f(x) = cos^2(2x) - x^2")
-x_val, time_val, iters_val = scalar.NewtonMethod(f, df)
-base.PrintResults(x_val, time_val, iters_val)
-print("Value of f(x): ", end='')
-print(f(x_val))
+def NewtonMethodExample(f=f, df=df):
+	print("NEWTON METHOD: f(x) = cos^2(2x) - x^2")
+	x_val, time_val, iters_val = scalar.NewtonMethod(f, df)
+	base.PrintResults(x_val, time_val, iters_val)
+	print("Value of f(x): ", end='')
+	print(f(x_val))
 
-print(" ")
+	print(" ")
 
-print("CHORD METHOD: f(x) = cos^2(2x) - x^2")
-x_val, time_val, iters_val = scalar.ChordMethod(f)
-base.PrintResults(x_val, time_val, iters_val)
-print("Value of f(x): ", end='')
-print(f(x_val))
+def ChordMethodExample(f=f):
+	print("CHORD METHOD: f(x) = cos^2(2x) - x^2")
+	x_val, time_val, iters_val = scalar.ChordMethod(f)
+	base.PrintResults(x_val, time_val, iters_val)
+	print("Value of f(x): ", end='')
+	print(f(x_val))
 
-print(" ")
+	print(" ")
 
-print("REGULA-FALSI METHOD: f(x) = cos^2(2x) - x^2")
-x_val, time_val, iters_val = scalar.RegulaFalsiMethod(f)
-base.PrintResults(x_val, time_val, iters_val)
-print("Value of f(x): ", end='')
-print(f(x_val))
+def RegulaFalsiMethodExample(f=f):
+	print("REGULA-FALSI METHOD: f(x) = cos^2(2x) - x^2")
+	x_val, time_val, iters_val = scalar.RegulaFalsiMethod(f)
+	base.PrintResults(x_val, time_val, iters_val)
+	print("Value of f(x): ", end='')
+	print(f(x_val))
 
-print(" ")
+	print(" ")
+
+
+# ------------------------------------------ #
+# -------- EXAMPLES FOR poly.py ------------ #
+# ------------------------------------------ #
+def F(x):
+	return 1+x**2+x**3
+
+def NewtonHornerExample(F=F):
+	a = [1., 1., 1.]
+	print("NEWTON-HORNER METHOD: f(x) = 1 + x^2 + x^3")
+	x_val, time_val, iters_val = poly.NewtonHorner(a, 0.5, ref=False)
+	base.PrintResults(x_val, time_val, iters_val)
+	print("Value of f(x): ", end='')
+	print([F(x) for x in x_val])
+
+	print(" ")
