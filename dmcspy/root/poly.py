@@ -6,6 +6,28 @@ method in root-finding for polynomial functions.
 """
 __author__ = 'Riyana Gueco'
 from time import time
+def Horner(a, z):
+	"""
+	A function that evaluates the value of a (complex) number
+	uner a polynomial function.
+
+	Arguments:
+		- a 	list of coefficients of the polynomial in descending
+				power so that a[0] is he coefficient of the leading
+				term
+		- z		(complex) number
+
+	Returns:
+		- b[-1]	value of the polynomial at point z
+		- b		list of coefficients of the quotient
+	"""
+	n = len(a)
+	b = [0.0] * n
+	b[0] = a[0]
+	for k in range(1, n):
+		b[k] = a[k] + b[k-1] * z
+	return b[-1], b
+	
 def NewtonHorner(a, z, tol=1e-10, maxit=100, ref=False, maxref=100):
 	"""
 	A function that approximates the root/zeros of a polynomial

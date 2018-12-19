@@ -44,6 +44,7 @@ as our next guess.
 """
 __author__ = 'Riyana Gueco'
 from time import time
+import numpy as np
 def BisectionMethod(f, a=0, b=1, tol=1e-10):
 	"""
 	A function that executes the bisection method to approximate
