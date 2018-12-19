@@ -3,7 +3,7 @@
 # -------------by Nikkon Acoba-------------- #
 from ..linalg import *
 from ..root import *
-from ..numdiff import *
+
 import numpy as np
 def linalg_bckSub():
 	print("---BACKWARD SUBSTITUTION METHOD---\n")
@@ -224,31 +224,8 @@ def NewtonHornerExample(F=F):
 	print([F(x) for x in x_val])
 
 	print(" ")
-# ------------------------------------------ #
-# -------- EXAMPLES FOR NUMDIFF ------------ #
-# ------------------------------------------ #
-def numdiff_forward():
-	print("--FORWARD DIFFERENCE METHOD--")
-	time=first.forward_difference()
-	print("Time Elapsed: ", time)
-	print(" ")
-def numdiff_backward():
-	print("--BACKWARD DIFFERENCE METHOD--")
-	time=first.backward_difference()
-	print("Time Elapsed: ", time)
-	print(" ")
-def numdiff_center():
-	print("--BACKWARD DIFFERENCE METHOD--")
-	time=first.center_difference()
-	print("Time Elapsed: ", time)
-	print(" ")	
-def numdiff_second_derivative():
-	print("--Second derivative METHOD--")
-	time=second.second_derivative()
-	print("Time Elapsed: ", time)
-	print(" ")	
-	
-if __name__ == '__main__':
+
+if __name__ == 'main':
 	linalg_bckSub() #calling backward substitution example
 	linalg_fwdSub()	#calling forward substitution example
 	linalg_gem_solve() #calling GEM
@@ -258,14 +235,4 @@ if __name__ == '__main__':
 	linalg_LU_partial_solve() #calling LU partial Solving method
 	linalg_sor() #calling sor
 	linalg_jor() #calling jor
-	BisectionMethodExample()
-	SecantMethodExample()
-	NewtonMethodExample()
-	RegulaFalsiMethodExample()
-	ChordMethodExample()
-	NewtonHornerExample()
-	numdiff_forward()
-	numdiff_backward()
-	numdiff_center()
-	numdiff_second_derivative()
 	
