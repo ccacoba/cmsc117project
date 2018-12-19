@@ -4,7 +4,7 @@
 from ..linalg import *
 from ..root import *
 from ..ode import *
-
+from ..numdiff import *
 import numpy as np
 def linalg_bckSub():
 	print("---BACKWARD SUBSTITUTION METHOD---\n")
@@ -237,7 +237,8 @@ def ode_feuler():
 	print("Forward Euler")
         x0 = np.array([1500,30])
         x_val, time_val = euler.method.forward(T = 1000, N = 10000, function = fun, init = x0)
-        base.PrintResults(x_val, time_val)
+        base.PrintResults1(x_val, time_val)
+		
 #def ode_backeuler():
 
 #def ode_theta():
@@ -246,26 +247,50 @@ def ode_adam_bashfort2():
 	print("Adam Bashfort 2")
         x0 = np.array([1500,30])
         x_val, time_val = adam_bashfort.method.adams2(T = 1000, N = 10000, function = fun, init = x0)
-        base.PrintResults(x_val, time_val)
+        base.PrintResults1(x_val, time_val)
         
 def ode_adam_bashfort3():
 	print("Adam Bashfort 3")
         x0 = np.array([1500,30])
         x_val, time_val = adam_bashfort.method.adams3(T = 1000, N = 10000, function = fun, init = x0)
-        base.PrintResults(x_val, time_val)
+        base.PrintResults1(x_val, time_val)
         
 def ode_rk2():
 	print("RK2")
         x0 = np.array([1500,30])
         x_val, time_val = rk.method.rk2(T = 1000, N = 10000, function = fun, init = x0)
-        base.PrintResults(x_val, time_val)
+        base.PrintResults1(x_val, time_val)
         
 def ode_rk4():
 	print("RK4")
         x0 = np.array([1500,30])
         x_val, time_val = rk.method.rk4(T = 1000, N = 10000, function = fun, init = x0)
-        base.PrintResults(x_val, time_val)
+        base.PrintResults1(x_val, time_val)
 #hanggang dito delete nyo kapag mali - Imman
+
+# ------------------------------------------ #
+# -------- EXAMPLES FOR NUMDIFF ------------ #
+# ------------------------------------------ #
+def numdiff_forward():
+	print("--FORWARD DIFFERENCE METHOD--")
+	time=first.forward_difference()
+	print("Time Elapsed: ", time)
+	print(" ")
+def numdiff_backward():
+	print("--BACKWARD DIFFERENCE METHOD--")
+	time=first.backward_difference()
+	print("Time Elapsed: ", time)
+	print(" ")
+def numdiff_center():
+	print("--BACKWARD DIFFERENCE METHOD--")
+	time=first.center_difference()
+	print("Time Elapsed: ", time)
+	print(" ")	
+def numdiff_second_derivative():
+	print("--Second derivative METHOD--")
+	time=second.second_derivative()
+	print("Time Elapsed: ", time)
+	print(" ")	
 
 if __name__ == '__main__':
 	linalg_bckSub() #calling backward substitution example
@@ -284,7 +309,11 @@ if __name__ == '__main__':
 	RegulaFalsiMethodExample()
 	NewtonHornerExample()
 	ode_feuler()
-        ode_adam_bashfort2()
-        ode_adam_bashfort3()
-        ode_rk2()
-        ode_rk4()
+	ode_adam_bashfort2()
+	ode_adam_bashfort3()
+	ode_rk2()
+	ode_rk4()
+	numdiff_forward()
+	numdiff_backward()
+	numdiff_center()
+	numdiff_second_derivative()

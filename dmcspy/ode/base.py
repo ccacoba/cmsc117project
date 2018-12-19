@@ -2,20 +2,40 @@ from .euler import *
 from .adams_bashfort import *
 from .rk import *
 from matplotlib import pyplot as plt
-def PrintResults(x_val, time_val, x=True, time=True):
-"""
-This method displays the graph the solutions of the First order Differential
-equations by the different methods for ODEs
+def PrintResults(x_val, time_val, iters_val, x=True, time=True, iters=True):
+	"""
+	A method that prints the results from the 
+	corresponding root-finding method used.
 
-arguments:
-        time     -    boolean value to print the time elapsed(in ms)
-        x        -    displays the graph of the chosen method that's used
-"""
+	Arguments:
+		x 		- boolean value for whether or not to print x
+		time 	- boolean value for whether or not to print time 
+		iters 	- boolean value for whether or not to print iters
+	"""
 	if x:
-                    plt.plot(x_val[0,:], x_val[1,:],'bs', ls = '-.', ms = '1.0')
-                    plt.xlabel('t')
-                    plt.ylabel('x(t)')
-                    plt.show()
+		print("Approximate value for x: ", end='')
+		print(x_val)
+	if time:
+		print("Time elapsed: ", end='')
+		print(time_val)
+	if iters:
+		print("Number of iterations: ", end='')
+		print(iters_val)
+
+
+def PrintResults1(x_val, time_val, x=True, time=True, ):
+	"""
+	A method that prints the results from the 
+	corresponding root-finding method used.
+
+	Arguments:
+		x 		- boolean value for whether or not to print x
+		time 	- boolean value for whether or not to print time 
+		
+	"""
+	if x:
+		print("Approximate value for x: ", end='')
+		print(x_val)
 	if time:
 		print("Time elapsed: ", end='')
 		print(time_val)
