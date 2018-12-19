@@ -3,6 +3,7 @@
 # -------------by Nikkon Acoba-------------- #
 from ..linalg import *
 from ..root import *
+from ..ode import *
 
 import numpy as np
 def linalg_bckSub():
@@ -228,6 +229,39 @@ def NewtonHornerExample(F=F):
 
 	print(" ")
 
+# ------------------------------------------- #
+# ------------ EXAMPLES FOR ODEs ------------ #
+# -------------- Imman Narciso -------------- #
+# ------------------------------------------- #
+def ode_feuler():
+        x0 = np.array([1500,30])
+        x_val, time_val = euler.method.forward(T = 1000, N = 10000, function = fun, init = x0)
+        base.PrintResults(x_val, time_val)
+#def ode_backeuler():
+
+#def ode_theta():
+
+def ode_adam_bashfort2():
+        x0 = np.array([1500,30])
+        x_val, time_val = adam_bashfort.method.adams2(T = 1000, N = 10000, function = fun, init = x0)
+        base.PrintResults(x_val, time_val)
+        
+def ode_adam_bashfort3():
+        x0 = np.array([1500,30])
+        x_val, time_val = adam_bashfort.method.adams3(T = 1000, N = 10000, function = fun, init = x0)
+        base.PrintResults(x_val, time_val)
+        
+def ode_rk2():
+        x0 = np.array([1500,30])
+        x_val, time_val = rk.method.rk2(T = 1000, N = 10000, function = fun, init = x0)
+        base.PrintResults(x_val, time_val)
+        
+def ode_rk4():
+        x0 = np.array([1500,30])
+        x_val, time_val = rk.method.rk4(T = 1000, N = 10000, function = fun, init = x0)
+        base.PrintResults(x_val, time_val)
+#hanggang dito delete nyo kapag mali - Imman
+
 if __name__ == '__main__':
 	linalg_bckSub() #calling backward substitution example
 	linalg_fwdSub()	#calling forward substitution example
@@ -244,3 +278,8 @@ if __name__ == '__main__':
 	ChordMethodExample()
 	RegulaFalsiMethodExample()
 	NewtonHornerExample()
+	ode_feuler()
+        ode_adam_bashfort2()
+        ode_adam_bashfort3()
+        ode_rk2()
+        ode_rk4()
