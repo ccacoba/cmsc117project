@@ -2,7 +2,7 @@ from .poly import *
 from .scalar import *
 from .system import *
 
-def PrintResults(x_val=x_val, time_val=time_val, iters_val=iters_val, x=True, time=True, iters=True):
+def PrintResults(x_val, time_val, iters_val, x=True, time=True, iters=True):
 	"""
 	A method that prints the results from the 
 	corresponding root-finding method used.

@@ -12,14 +12,14 @@ def Horner(a, z):
 	uner a polynomial function.
 
 	Arguments:
-		- a 	list of coefficients of the polynomial in descending
+		a 		- list of coefficients of the polynomial in descending
 				power so that a[0] is he coefficient of the leading
 				term
-		- z		(complex) number
+		z		- (complex) number
 
 	Returns:
-		- b[-1]	value of the polynomial at point z
-		- b		list of coefficients of the quotient
+		b[-1] 		- value of the polynomial at point z
+		b		- list of coefficients of the quotient
 	"""
 	n = len(a)
 	b = [0.0] * n
