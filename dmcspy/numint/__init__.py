@@ -1,1 +1,1 @@
-from .one_d import method
+from ..__init__ import linalg
