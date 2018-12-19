@@ -1,3 +1,0 @@
-"""
-adams_bashfort
-"""

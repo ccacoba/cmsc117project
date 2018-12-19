@@ -1,3 +1,0 @@
-"""
-ode methods rk
-"""
